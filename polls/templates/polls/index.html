@@ -1,7 +1,12 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
+<h1>Welcome to Polls for Awareness, Please click on a question you would like to answer</h1>
+
 {% if latest_question_list %}
 <ul>
 	{% for question in latest_question_list %}
-	<li> <a href="{% url 'polls:detail' question.id %}" title="detail"> {{ question.question_text }} </a></li>
+	<h2><li> <a href="{% url 'polls:detail' question.id %}" title="detail"> {{ question.question_text }} </a></li> </h2>
 	{% endfor %}
 </ul>
 {% else %}
